@@ -1,12 +1,18 @@
-feat: Implement real-time sync tool in Python using watchdog
+feat: Implement GUI for sync tool with auto-start and file logging
 
-Replaces the previous C++ implementation attempt with a Python version
-utilizing the 'watchdog' library for filesystem monitoring and standard
-'os' and 'shutil' modules for file operations.
+Introduces a CustomTkinter-based graphical user interface for managing
+real-time, one-way directory synchronization tasks.
 
-Key Features:
-- Monitors source directory recursively for create, delete, modify, move events.
-- Performs initial full sync from source to destination(s).
-- Replicates changes to one or more destination directories.
-- Includes basic logging.
-- Takes source and destination paths as command-line arguments.
+Key features in this update:
+- Main application window to display and manage sync tasks.
+- Dialog to add new tasks with source and multiple destination selection.
+- Persistent storage of task configurations in 'sync_config.json'.
+- Tasks run in background threads using 'watchdog' for monitoring.
+- Auto-start functionality:
+    - Tasks loaded from config are started on application launch.
+    - Newly added tasks are started by default.
+- Controls for starting/stopping individual or all tasks.
+- Functionality to remove selected or all tasks with confirmation.
+- Logging to both console and a rotating file in 'Documents/SyncAppLogs/sync_app.log'.
+- UI improvements, including better font consistency in dialogs.
+- Updated README and CHANGELOG to reflect GUI implementation.

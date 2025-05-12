@@ -136,3 +136,6 @@ cython_debug/
 .vscode/settings.json
 .vscode/launch.json
 .vscode/tasks.json
+
+# Custom config file for this app
+sync_config.json
