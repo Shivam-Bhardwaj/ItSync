@@ -1,18 +1,18 @@
-feat: Implement GUI for sync tool with auto-start and file logging
+feat: Add 'Remove All Tasks', file logging, and UI/UX improvements
 
-Introduces a CustomTkinter-based graphical user interface for managing
-real-time, one-way directory synchronization tasks.
+This update introduces several enhancements to the Python GUI sync tool:
 
-Key features in this update:
-- Main application window to display and manage sync tasks.
-- Dialog to add new tasks with source and multiple destination selection.
-- Persistent storage of task configurations in 'sync_config.json'.
-- Tasks run in background threads using 'watchdog' for monitoring.
-- Auto-start functionality:
-    - Tasks loaded from config are started on application launch.
-    - Newly added tasks are started by default.
-- Controls for starting/stopping individual or all tasks.
-- Functionality to remove selected or all tasks with confirmation.
-- Logging to both console and a rotating file in 'Documents/SyncAppLogs/sync_app.log'.
-- UI improvements, including better font consistency in dialogs.
-- Updated README and CHANGELOG to reflect GUI implementation.
+- **Remove All Tasks:** Added a button to the sidebar allowing users to remove
+  all configured sync tasks after confirmation. This includes stopping any
+  active tasks before clearing the configuration.
+- **File Logging:** Implemented logging to a rotating file
+  (`Documents/SyncAppLogs/sync_app.log`) in addition to console output.
+  This provides a persistent record of application activity and errors.
+- **Auto-start New Tasks:** Newly added tasks now attempt to start
+  synchronization automatically by default.
+- **UI Font Consistency:** Improved the font size in the destination folder
+  listbox within the "Add Task" dialog to better match other UI elements.
+- **Desktop Shortcut Preparation:** Discussed and prepared for packaging the
+  application as a standalone executable (e.g., using PyInstaller) to allow
+  running without a separate console window and for easier shortcut creation.
+- Minor refinements to task stopping logic and button state updates.
