@@ -1,0 +1,12 @@
+feat: Implement real-time sync tool in Python using watchdog
+
+Replaces the previous C++ implementation attempt with a Python version
+utilizing the 'watchdog' library for filesystem monitoring and standard
+'os' and 'shutil' modules for file operations.
+
+Key Features:
+- Monitors source directory recursively for create, delete, modify, move events.
+- Performs initial full sync from source to destination(s).
+- Replicates changes to one or more destination directories.
+- Includes basic logging.
+- Takes source and destination paths as command-line arguments.
